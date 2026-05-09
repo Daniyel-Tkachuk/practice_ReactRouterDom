@@ -45,13 +45,3 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     color: white;
 }
-
-.link {
-    text-decoration: none;
-    color: #282c34;
-}
-
-.activeLink {
-    text-decoration: underline;
-    color: #7fb8f1
-}
