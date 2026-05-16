@@ -31,7 +31,7 @@ export const App = ()=> {
             <Route path={PATH.ADIDAS} element={<PageOne/>}/>
             <Route path={PATH.PUMA} element={<PageTwo/>}/>
             <Route path={PATH.ABIBAS} element={<PageThree/>}/>
-            <Route path={'/adidas/model/:id'} element={<Model/>}/>
+            <Route path={'/:brand/model/:id'} element={<Model/>}/>
 
             <Route path={'/*'} element={<Error404/>}/>
             {/*<Route path='*' element={<Navigate to={PATH.ERROR}/>}/>*/}

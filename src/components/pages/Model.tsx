@@ -1,11 +1,21 @@
-import {useParams} from "react-router-dom";
-import {adidasArr} from "./PageOne";
 import {S} from './_styles'
+import {useParams} from "react-router-dom";
+import {adidasArr, AdidasItem} from "./PageOne";
+import {pumaArr, PumaItem} from "./PageTwo";
+
+type CurrentBrand = Record<string, AdidasItem[] | PumaItem[]>
+
+const currentBrand: CurrentBrand = {
+  adidas: adidasArr,
+  puma: pumaArr,
+}
 
 export const Model = () => {
-  const {id} = useParams()
+  const {id, brand} = useParams()
 
-  const currentModel = adidasArr.find(el => String(el.id) === id)
+  const currentModel = brand
+    ? currentBrand[brand].find(el => el.id === id)
+    : null
 
   if (!currentModel) {
     return (

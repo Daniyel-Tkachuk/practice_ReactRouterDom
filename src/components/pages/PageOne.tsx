@@ -1,11 +1,13 @@
-import adidasModel1 from '../../assets/adidasModel1.webp'
-import adidasModel2 from '../../assets/adidasModel2.webp'
-import adidasModel3 from '../../assets/adidasModel3.webp'
+import adidasModel1 from '../../assets/adidas/adidasModel1.webp'
+import adidasModel2 from '../../assets/adidas/adidasModel2.webp'
+import adidasModel3 from '../../assets/adidas/adidasModel3.webp'
 import {S} from './_styles'
 import {Link} from "react-router-dom";
 
+
+
 export type AdidasItem= {
-    id: number
+    id: string
     model: string;
     collection: string;
     price: string;
@@ -13,7 +15,7 @@ export type AdidasItem= {
 }
 export const adidasArr:AdidasItem[] = [
     {
-        id: 1,
+        id: crypto.randomUUID(),
         model: 'ADIDAS ADIFOM TRXN',
         collection: 'new collection1',
         price: '100200$',
@@ -21,14 +23,14 @@ export const adidasArr:AdidasItem[] = [
 
     },
     {
-        id: 2,
+        id: crypto.randomUUID(),
         model: 'ADIDAS ADIFOM SUPER',
         collection: 'new collection22',
         price: '200300$',
         picture: adidasModel2
     },
     {
-        id: 3,
+        id: crypto.randomUUID(),
         model: 'ADIDAS SUPER SUPERSKI',
         collection: 'new collection333',
         price: '300400$',
@@ -39,11 +41,11 @@ export const adidasArr:AdidasItem[] = [
 export const PageOne = () => {
     return (
         <div>
-           <h2> ADIDAS</h2>
+           <h2 style={{textAlign: 'center'}}> ADIDAS</h2>
             <S.NavImagesWrapper>
                 {
-                    adidasArr.map((adidas, index) => (
-                      <Link key={index} to={`/adidas/model/${adidas.id}`}>
+                    adidasArr.map((adidas) => (
+                      <Link key={adidas.id} to={`/adidas/model/${adidas.id}`}>
                           <img src={adidas.picture} alt="images"/>
                       </Link>
                     ))
