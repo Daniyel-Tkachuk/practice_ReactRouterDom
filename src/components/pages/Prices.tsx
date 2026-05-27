@@ -39,14 +39,22 @@ export const Prices = (props: Props) => {
 
     const [filteredSneakers, setFilteredSneakers] = useState(sneakers);
 
-    function handleOnSale() {
+    const [searchParams, setSearchParams] = useSearchParams()
 
+    useEffect(() => {
+        const filtered = searchParams.get('onSale') === 'true'
+          ? filteredSneakers.filter(el => el.onSale)
+          : [...sneakers]
+        setFilteredSneakers(filtered);
+    }, [searchParams]);
+
+    function handleOnSale() {
+        setSearchParams({onSale: 'true'})
     }
 
     function handleReset() {
-
+        setSearchParams({})
     }
-
 
     return (
         <div>

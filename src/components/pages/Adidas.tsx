@@ -38,7 +38,7 @@ export const adidasArr:AdidasItem[] = [
     }
 ]
 
-export const PageOne = () => {
+export const Adidas = () => {
     return (
         <div>
            <h2 style={{textAlign: 'center'}}> ADIDAS</h2>

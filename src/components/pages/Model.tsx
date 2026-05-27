@@ -1,7 +1,7 @@
 import {S} from './_styles'
 import {useParams} from "react-router-dom";
-import {adidasArr, AdidasItem} from "./PageOne";
-import {pumaArr, PumaItem} from "./PageTwo";
+import {adidasArr, AdidasItem} from "./Adidas";
+import {pumaArr, PumaItem} from "./Puma";
 
 type CurrentBrand = Record<string, AdidasItem[] | PumaItem[]>
 
