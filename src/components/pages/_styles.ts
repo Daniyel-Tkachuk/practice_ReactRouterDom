@@ -48,6 +48,7 @@ const CurrentModel = styled.div`
         height: 400px;
         object-fit: cover;
     }
+
     & > span.collection {
         font-size: 15px;
         margin-bottom: 10px;
