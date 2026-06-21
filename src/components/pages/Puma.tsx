@@ -13,7 +13,7 @@ export type PumaItem= {
 }
 export const pumaArr:PumaItem[] = [
     {
-        id: crypto.randomUUID(),
+        id: '1',
         model: 'PUMA ADIFOM TRXN',
         collection: 'new collection1',
         price: '100200$',
@@ -21,14 +21,14 @@ export const pumaArr:PumaItem[] = [
 
     },
     {
-        id: crypto.randomUUID(),
+        id: '2',
         model: 'PUMA ADIFOM SUPER',
         collection: 'new collection22',
         price: '200300$',
         picture: pumaModel2
     },
     {
-        id: crypto.randomUUID(),
+        id: '3',
         model: 'PUMA SUPER SUPERSKI',
         collection: 'new collection333',
         price: '300400$',
