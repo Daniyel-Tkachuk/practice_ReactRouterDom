@@ -6,13 +6,16 @@ import {Abibas} from "../components/pages/Abibas";
 import {Puma} from "../components/pages/Puma";
 import {Model} from "../components/pages/Model";
 import {Prices} from "../components/pages/Prices";
+import {ProtectedRoute} from "./ProtectedRoute";
+import {ProtectedPage} from "../components/pages/ProtectedPage";
 
 export const PATH= {
   ADIDAS: "/adidas",
   PUMA: "/puma",
   ABIBAS: "/abibas",
   PRICES: "/prices",
-  MODEL: ":brand/model/:id",
+  MODEL: "/:brand/model/:id",
+  PROTECTED: "/protected",
   ERROR: "/error404"
 } as const
 
@@ -45,6 +48,14 @@ export const router = createBrowserRouter([
       {
         path: PATH.PRICES,
         element: <Prices/>
+      },
+      {
+        path: PATH.PROTECTED,
+        element: (
+          <ProtectedRoute>
+            <ProtectedPage/>
+          </ProtectedRoute>
+        )
       },
       {
         path: PATH.ERROR,
